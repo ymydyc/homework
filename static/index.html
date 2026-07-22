@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Store 评论分析工具</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>App Store 评论分析工具</h1>
+            <p class="subtitle">智能分析用户反馈，生成产品需求和测试用例</p>
+        </header>
+
+        <main>
+            <!-- 输入区域 -->
+            <section class="input-section">
+                <div class="form-group">
+                    <label for="app-url">App Store 链接</label>
+                    <input type="text" id="app-url" placeholder="https://apps.apple.com/us/app/...">
+                </div>
+                <div class="form-group">
+                    <label for="analysis-target">分析目标（可选）</label>
+                    <textarea id="analysis-target" rows="3" placeholder="例如：关注订阅转化率、用户体验问题等"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="import-file">或导入数据文件（JSON/CSV）</label>
+                    <input type="file" id="import-file" accept=".json,.csv">
+                </div>
+                <button id="start-btn" class="btn-primary">开始分析</button>
+            </section>
+
+            <!-- 进度显示 -->
+            <section id="progress-section" class="progress-section" style="display: none;">
+                <h2>分析进度</h2>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <div id="progress-info" class="progress-info">
+                    <span id="current-stage">准备中...</span>
+                    <span id="progress-percent">0%</span>
+                </div>
+                <div id="progress-message" class="progress-message"></div>
+            </section>
+
+            <!-- 结果展示 -->
+            <section id="result-section" class="result-section" style="display: none;">
+                <h2>分析结果</h2>
+
+                <!-- 应用信息 -->
+                <div class="result-card">
+                    <h3>应用信息</h3>
+                    <div id="app-info" class="app-info"></div>
+                </div>
+
+                <!-- 数据统计 -->
+                <div class="result-card">
+                    <h3>数据统计</h3>
+                    <div id="statistics" class="statistics"></div>
+                </div>
+
+                <!-- 主题分析 -->
+                <div class="result-card">
+                    <h3>主题分析</h3>
+                    <div id="topics" class="topics"></div>
+                </div>
+
+                <!-- 问题列表 -->
+                <div class="result-card">
+                    <h3>核心问题</h3>
+                    <div id="problems" class="problems"></div>
+                </div>
+
+                <!-- 需求列表 -->
+                <div class="result-card">
+                    <h3>产品需求</h3>
+                    <div id="requirements" class="requirements"></div>
+                </div>
+
+                <!-- 版本规划 -->
+                <div class="result-card">
+                    <h3>版本规划</h3>
+                    <div id="versions" class="versions"></div>
+                </div>
+
+                <!-- 测试用例 -->
+                <div class="result-card">
+                    <h3>测试用例</h3>
+                    <div id="test-cases" class="test-cases"></div>
+                </div>
+
+                <!-- PRD 文档 -->
+                <div class="result-card">
+                    <h3>PRD 文档</h3>
+                    <div id="prd-content" class="prd-content"></div>
+                </div>
+
+                <!-- 导出按钮 -->
+                <div class="export-buttons">
+                    <button class="btn-secondary" onclick="exportData('json')">导出 JSON</button>
+                    <button class="btn-secondary" onclick="exportData('csv')">导出 CSV</button>
+                    <button class="btn-secondary" onclick="exportData('md')">导出 PRD</button>
+                </div>
+            </section>
+
+            <!-- 评论列表 -->
+            <section id="reviews-section" class="reviews-section" style="display: none;">
+                <h2>评论数据</h2>
+                <div id="reviews-list" class="reviews-list"></div>
+                <div id="reviews-pagination" class="pagination"></div>
+            </section>
+        </main>
+
+        <!-- 溯源模态框 -->
+        <div id="trace-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="trace-modal-title">溯源评论</h3>
+                    <span class="modal-close" onclick="closeTraceModal()">&times;</span>
+                </div>
+                <div id="trace-modal-body" class="modal-body">
+                    <!-- 溯源内容会动态加载 -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>App Store 评论分析工具 - 使用 LLM 驱动的智能分析</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

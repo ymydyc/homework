@@ -1,0 +1,76 @@
+{
+  "task_id": "bfdb7de5",
+  "app_name": "App 423084029",
+  "app_id": "423084029",
+  "analysis_goal": "??????",
+  "statistics": {
+    "total_reviews": 50,
+    "average_rating": 1.22,
+    "rating_distribution": {
+      "1_star": 45,
+      "2_star": 2,
+      "3_star": 1,
+      "4_star": 1,
+      "5_star": 1
+    },
+    "versions": [
+      "12.57.401",
+      "12.59.405",
+      "12.45.402",
+      "12.53.403",
+      "12.57.202",
+      "12.51.402",
+      "12.50.402",
+      "12.52.403",
+      "12.54.401",
+      "12.55.402",
+      "12.43.201",
+      "12.60.402",
+      "12.61.401",
+      "12.49.202",
+      "12.44.204",
+      "12.59.403",
+      "12.49.401",
+      "12.61.202",
+      "12.56.202",
+      "12.60.202",
+      "12.45.201",
+      "12.52.202",
+      "12.58.401",
+      "12.50.202",
+      "12.55.203",
+      "12.59.201"
+    ],
+    "date_range": {
+      "earliest": "2025-09-18T22:43:32-07:00",
+      "latest": "2026-07-19T04:07:08-07:00"
+    }
+  },
+  "themes": [],
+  "issues": [],
+  "evidence_analysis": [],
+  "requirements": [],
+  "version_plan": [],
+  "prd": "# PRD Generation Error\n\nError code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '2ba0f51f-81c9-92bc-9d21-9c24356f9766'}",
+  "test_cases": [],
+  "validation_report": {
+    "valid": true,
+    "checks": [
+      {
+        "name": "Requirements have source reviews",
+        "passed": true
+      },
+      {
+        "name": "Test cases linked to requirements",
+        "passed": true
+      },
+      {
+        "name": "No ungrounded conclusions",
+        "passed": true
+      }
+    ],
+    "warnings": [],
+    "errors": []
+  },
+  "trace_matrix": []
+}
